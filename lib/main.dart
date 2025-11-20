@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:spotlessgo/pages/customer_login_page.dart';
 import 'package:spotlessgo/pages/onboarding_page.dart';
 import 'package:spotlessgo/pages/welcome_page.dart';
 
@@ -22,9 +23,10 @@ class MyApp extends StatelessWidget {
       routes: {
        "/onboarding": (context)=> OnboardingPage(),
        "/welcome": (context)=> WelcomePage(),
+       "/customer": (context)=> CustomerLoginPage(),
      // home: const MyHomePage(title: 'SpotlessGo'),
   },
-  initialRoute: "/onboarding",
+initialRoute: "/onboarding",
     );
     
   }

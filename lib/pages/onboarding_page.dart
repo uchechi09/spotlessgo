@@ -1,6 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotlessgo/widgets/primary_custom_button.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -62,22 +63,10 @@ class OnboardingPage extends StatelessWidget {
               color: Colors.blueAccent,
             ),
             SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("/welcome");
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.blueAccent,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                ),
-                child: Text("Get Started"),
-              ),
+            PrimaryCutomButton(text: "Get Started",
+             onPressed: () {
+          Navigator.of(context).pushNamed("/welcome");
+        },
             ),
           ],
         ),
@@ -118,3 +107,4 @@ class OnboardingPage extends StatelessWidget {
     );
   }
 }
+

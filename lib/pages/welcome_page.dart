@@ -32,12 +32,16 @@ class WelcomePage extends StatelessWidget {
                 icon: Icons.people_alt_outlined,
                 title: "Customer",
                 subtitle: "Book cleaning services for your\n home and office",
+                onTap: () {
+                  Navigator.pushNamed(context, "/customer");
+                },
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               _buildHomeButton(
                 icon: Icons.cleaning_services_outlined,
                 title: "Cleaner",
                 subtitle: "Accept jobs and earn money on\nyour schedule",
+                onTap: () {},
               ),
             ],
           ),
@@ -50,40 +54,52 @@ class WelcomePage extends StatelessWidget {
     required IconData icon,
     required String title,
     required String subtitle,
+    required VoidCallback onTap,
   }) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        padding: EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.grey.shade50,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Row(
-          spacing: 12,
-          children: [
-            Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: FlexColor.mandyRedDarkTertiary,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Icon(icon, color: Colors.white),
+    return Column(
+      children: [
+        InkWell(
+          onTap: () {
+            onTap();
+          },
+          child: Container(
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade50,
+              borderRadius: BorderRadius.circular(16),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              spacing: 12,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: FlexColor.mandyRedDarkTertiary,
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Icon(icon, color: Colors.white),
                 ),
-                Text(subtitle, style: TextStyle(fontSize: 18)),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(subtitle, style: TextStyle(fontSize: 14)),
+                    ],
+                  ),
+                ),
               ],
             ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }
