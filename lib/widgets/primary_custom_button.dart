@@ -9,6 +9,7 @@ class PrimaryCutomButton extends StatelessWidget {
   });
   final String text;
   final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
