@@ -5,8 +5,8 @@ import 'package:spotlessgo/widgets/password_textfield.dart';
 import 'package:spotlessgo/widgets/primary_custom_button.dart';
 import 'package:spotlessgo/widgets/social_signin.dart';
 
-class CustomerLoginPage extends StatelessWidget {
-  const CustomerLoginPage({super.key});
+class CustomerSignupPage extends StatelessWidget {
+  const CustomerSignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,10 @@ class CustomerLoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Column(
-            spacing: 8,
             children: [
-              SizedBox(height: 200),
+              SizedBox(height: 100),
               Text(
-                "Welcome Back",
+                "Lets Get Started",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -26,7 +25,7 @@ class CustomerLoginPage extends StatelessWidget {
                 ),
               ),
               Text(
-                "Sign in to continue with SpotlessGo",
+                "Create an account to continue with SpotlessGo",
                 style: TextStyle(fontSize: 16),
               ),
               Padding(
@@ -34,29 +33,23 @@ class CustomerLoginPage extends StatelessWidget {
                 child: Column(
                   spacing: 20,
                   children: [
+                    //SizedBox(height: 16,),
+                    CustomTextField(label: "Full Name"),
                     CustomTextField(label: "Email"),
-                    PasswordTextField(label: "Password",),
-
-                    PrimaryCutomButton(text: "Sign In", onPressed: () {}),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        "Forgotten Password?",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: FlexColor.mandyRedDarkTertiary,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                    CustomTextField(label: "Phone Number"),
+                    PasswordTextField(label: "Password"),
+                    PasswordTextField(label: "Confirm Password"),
+                    PrimaryCutomButton(text: "Sign up", onPressed: () {
+                      Navigator.of(context).pushReplacementNamed("/home");  
+                    }),
                     SocialSignIn(),
-                    SizedBox(height: 12,),
-                    Text("Don't have an account yet?"),
-                    SizedBox(height: 16,),
+
+                    Text("Already have an account?"),
+
                     PrimaryCutomButton(
-                      text: "Sign Up",
+                      text: "Sign In",
                       onPressed: () {
-                         Navigator.of(context).pushNamed("/customersignup");
+                        Navigator.of(context).pushReplacementNamed("/customer");
                       },
                     ),
                   ],
@@ -69,4 +62,3 @@ class CustomerLoginPage extends StatelessWidget {
     );
   }
 }
-

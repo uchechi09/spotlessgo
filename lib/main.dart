@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:spotlessgo/pages/customer_login_page.dart';
+import 'package:spotlessgo/pages/customer_signup_page.dart';
+import 'package:spotlessgo/pages/home_page.dart';
 import 'package:spotlessgo/pages/onboarding_page.dart';
 import 'package:spotlessgo/pages/welcome_page.dart';
 
@@ -24,6 +26,8 @@ class MyApp extends StatelessWidget {
        "/onboarding": (context)=> OnboardingPage(),
        "/welcome": (context)=> WelcomePage(),
        "/customer": (context)=> CustomerLoginPage(),
+       "/customersignup": (context)=> CustomerSignupPage(),
+       "/home": (context)=> HomePage(),
      // home: const MyHomePage(title: 'SpotlessGo'),
   },
 initialRoute: "/onboarding",
@@ -32,55 +36,4 @@ initialRoute: "/onboarding",
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    
-    return Scaffold(
-      appBar: AppBar(
-        
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      
-        title: Text(widget.title),
-      ),
-      body: Center(
-       
-        child: Column(
-        
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      
-      ), 
-    );
-  }
-}
