@@ -14,7 +14,6 @@ class CustomerLoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Column(
-            spacing: 8,
             children: [
               SizedBox(height: 200),
               Text(
@@ -25,19 +24,30 @@ class CustomerLoginPage extends StatelessWidget {
                   color: FlexColor.mandyRedLightTertiary,
                 ),
               ),
+              SizedBox(height: 8),
               Text(
                 "Sign in to continue with SpotlessGo",
                 style: TextStyle(fontSize: 16),
               ),
-              Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  spacing: 20,
-                  children: [
-                    CustomTextField(label: "Email"),
-                    PasswordTextField(label: "Password",),
 
-                    PrimaryCutomButton(text: "Sign In", onPressed: () {}),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    SizedBox(height: 20),
+                    CustomTextField(label: "Email"),
+                    SizedBox(height: 20),
+                    PasswordTextField(label: "Password"),
+
+                    SizedBox(height: 20),
+                    PrimaryCutomButton(
+                      text: "Sign In",
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/home");
+                      },
+                    ),
+
+                    SizedBox(height: 20),
                     InkWell(
                       onTap: () {},
                       child: Text(
@@ -49,14 +59,18 @@ class CustomerLoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    SizedBox(height: 20),
                     SocialSignIn(),
-                    SizedBox(height: 12,),
+
+                    SizedBox(height: 12),
                     Text("Don't have an account yet?"),
-                    SizedBox(height: 16,),
+
+                    SizedBox(height: 16),
                     PrimaryCutomButton(
                       text: "Sign Up",
                       onPressed: () {
-                         Navigator.of(context).pushNamed("/customersignup");
+                        Navigator.of(context).pushNamed("/customersignup");
                       },
                     ),
                   ],
@@ -69,4 +83,3 @@ class CustomerLoginPage extends StatelessWidget {
     );
   }
 }
-

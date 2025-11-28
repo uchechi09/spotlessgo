@@ -1,37 +1,24 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:spotlessgo/widgets/home_grid.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var ListOfgridText = ["My Bookings", "Ratings", "Hours Saved"];
-    return Scaffold(
-      body: Stack(
+    return SingleChildScrollView(
+      child: Column(
         children: [
-          _buildTopContainer(),
-
-          Positioned.fill(
-            top: 120,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: GridView.builder(
-                itemCount: 3,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                 // mainAxisSpacing: 18,
-                  //crossAxisSpacing: 10,
-                ),
-                itemBuilder: (context, index) {
-                  return Card(
-                    child: Center(child: Text(ListOfgridText[index])),
-                  );
-                },
-              ),
-            ),
+          Stack(
+            children: [
+              // method for top container
+              _buildTopContainer(),
+              // widget for grid
+              HomeGrid(),
+            ],
           ),
+           Text("Our Services"),
         ],
       ),
     );
@@ -58,8 +45,12 @@ class HomePage extends StatelessWidget {
       child: Align(
         alignment: Alignment.topLeft,
         child: Text(
-          "Welcome Back,",
-          style: TextStyle(fontSize: 18, color: Colors.white),
+          "Welcome Back,\nGrace!",
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+            fontStyle: FontStyle.italic,
+          ),
           textAlign: TextAlign.left,
         ),
       ),
