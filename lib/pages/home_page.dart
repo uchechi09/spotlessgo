@@ -1,6 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:spotlessgo/widgets/home_grid.dart';
+import 'package:spotlessgo/widgets/home_services_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,7 +19,35 @@ class HomePage extends StatelessWidget {
               HomeGrid(),
             ],
           ),
-           Text("Our Services"),
+          SizedBox(height: 12),
+          Text("Our Services"),
+          SizedBox(height: 12),
+          Column(
+            spacing: 14,
+            children: [
+              HomeServicesCard(
+                icon: Icons.home_outlined,
+                imagePath: 'assets/images/homec.jpeg',
+                title: "Home Cleaning",
+                subtitle: "Professional cleaning for your\nhome",
+                price: "From ₦15000",
+              ),
+              HomeServicesCard(
+                icon: Icons.home_outlined,
+                imagePath: 'assets/images/office.jpeg',
+                title: "Office Cleaning",
+                subtitle: "Expert cleaning services for\nyour workspace",
+                price: "From ₦10000",
+              ),
+              HomeServicesCard(
+                icon: Icons.checkroom_outlined,
+                imagePath: 'assets/images/laundry.jpeg',
+                title: "Laundry Service",
+                subtitle: "We wash, dry and fold your\nclothes",
+                price: "From ₦300",
+              ),
+            ],
+          ),
         ],
       ),
     );
