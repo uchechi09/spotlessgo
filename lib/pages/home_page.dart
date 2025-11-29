@@ -21,30 +21,54 @@ class HomePage extends StatelessWidget {
           ),
           SizedBox(height: 12),
           Text("Our Services"),
-          SizedBox(height: 12),
           Column(
-            spacing: 14,
             children: [
               HomeServicesCard(
+                onTap: () {},
                 icon: Icons.home_outlined,
                 imagePath: 'assets/images/homec.jpeg',
                 title: "Home Cleaning",
-                subtitle: "Professional cleaning for your\nhome",
+                subtitle: "Professional cleaning\nfor your home",
                 price: "From ₦15000",
               ),
               HomeServicesCard(
-                icon: Icons.home_outlined,
+                onTap: () {},
+                icon: Icons.house_outlined,
                 imagePath: 'assets/images/office.jpeg',
                 title: "Office Cleaning",
-                subtitle: "Expert cleaning services for\nyour workspace",
+                subtitle: "Expert cleaning services\nfor your workspace",
                 price: "From ₦10000",
               ),
               HomeServicesCard(
+                onTap: () {},
                 icon: Icons.checkroom_outlined,
                 imagePath: 'assets/images/laundry.jpeg',
-                title: "Laundry Service",
-                subtitle: "We wash, dry and fold your\nclothes",
+                title: "Laundry Services",
+                subtitle: "We wash, dry and fold\nyour clothes",
                 price: "From ₦300",
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15),
+                child: Container(
+                  height: 130,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: FlexColor.mandyRedLightTertiary,
+                    // borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "First Time User?\nGet 20% OFF Your First Booking!",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

@@ -50,10 +50,7 @@ class HomeGrid extends StatelessWidget {
                     SizedBox(height: 4),
                     Text(
                       item["title"] as String,
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                      ),
+                      style: TextStyle(fontSize: 12, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                   ],
