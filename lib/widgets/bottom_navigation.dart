@@ -25,7 +25,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   void initState() {
     super.initState();
-    pages = [ HomePage(),  BookingPage(),  ProfilePage()];
+    pages = [
+      HomePage(),
+      BookingPage(),
+      ProfilePage(onBackPressed: () => setState(() => indexToBeShown = 0)),
+    ];
   }
 
   @override

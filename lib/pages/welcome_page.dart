@@ -30,8 +30,8 @@ class WelcomePage extends StatelessWidget {
               SizedBox(height: 50),
               _buildHomeButton(
                 icon: Icons.people_alt_outlined,
-                title: "Customer",
-                subtitle: "Book cleaning services for your\n home and office",
+                title: "Customer?",
+                subtitle: "Book cleaning services for your home and office",
                 onTap: () {
                   Navigator.pushNamed(context, "/customer");
                 },
@@ -39,8 +39,8 @@ class WelcomePage extends StatelessWidget {
               SizedBox(height: 20),
               _buildHomeButton(
                 icon: Icons.cleaning_services_outlined,
-                title: "Cleaner",
-                subtitle: "Accept jobs and earn money on\nyour schedule",
+                title: "Cleaner?",
+                subtitle: "Accept jobs and earn money on your schedule",
                 onTap: () {},
               ),
             ],
@@ -63,6 +63,7 @@ class WelcomePage extends StatelessWidget {
             onTap();
           },
           child: Container(
+            height: 180,
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: Colors.grey.shade50,
@@ -83,6 +84,7 @@ class WelcomePage extends StatelessWidget {
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         title,
