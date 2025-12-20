@@ -1,5 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:spotlessgo/data/service.dart';
+import 'package:spotlessgo/pages/book_service_page.dart';
 import 'package:spotlessgo/widgets/home_grid.dart';
 import 'package:spotlessgo/widgets/home_services_card.dart';
 
@@ -24,7 +26,16 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               HomeServicesCard(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BookServicePage(
+                        service: Services.home, 
+                      ),
+                    ),
+                  );
+                },
                 icon: Icons.home_outlined,
                 imagePath: 'assets/images/homec.jpeg',
                 title: "Home Cleaning",
@@ -32,7 +43,16 @@ class HomePage extends StatelessWidget {
                 price: "From ₦15000",
               ),
               HomeServicesCard(
-                onTap: () {},
+                onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BookServicePage(
+                        service: Services.office, 
+                      ),
+                    ),
+                  );
+                },
                 icon: Icons.house_outlined,
                 imagePath: 'assets/images/office.jpeg',
                 title: "Office Cleaning",
@@ -40,7 +60,16 @@ class HomePage extends StatelessWidget {
                 price: "From ₦10000",
               ),
               HomeServicesCard(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BookServicePage(
+                        service: Services.laundry, 
+                      ),
+                    ),
+                  );
+                },
                 icon: Icons.checkroom_outlined,
                 imagePath: 'assets/images/laundry.jpeg',
                 title: "Laundry Services",

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotlessgo/pages/models/status.dart';
+import 'package:spotlessgo/models/status.dart';
 import 'package:spotlessgo/widgets/info_row.dart';
 
 enum BookingStatus { confirmed, booked, pending }
@@ -83,7 +83,7 @@ class BookingCard extends StatelessWidget {
   StatusData statusStyle(BookingStatus status) {
     switch (status) {
       case BookingStatus.confirmed:
-        return StatusData(
+         return StatusData(
           label: 'Confirmed',
           background: Colors.blue.shade50,
           textColor: Colors.blue,

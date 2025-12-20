@@ -17,21 +17,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'SpotlessGo',
       theme: ThemeData(
-       scaffoldBackgroundColor: Colors.lightBlue.shade50,
+        scaffoldBackgroundColor: Colors.lightBlue.shade50,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue.shade700),
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-       "/onboarding": (context)=> OnboardingPage(),
-       "/welcome": (context)=> WelcomePage(),
-       "/customer": (context)=> CustomerLoginPage(),
-       "/customersignup": (context)=> CustomerSignupPage(),
-       "/home": (context)=> BottomNavigation(),
-  },
-initialRoute: "/onboarding",
+        "/onboarding": (context) => OnboardingPage(),
+        "/welcome": (context) => WelcomePage(),
+        "/customer": (context) => CustomerLoginPage(),
+        "/customersignup": (context) => CustomerSignupPage(),
+        "/home": (context) => BottomNavigation(),
+      },
+      initialRoute: "/onboarding",
     );
-    
   }
 }
-
-
