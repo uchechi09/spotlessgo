@@ -27,10 +27,23 @@ class _BookServicePageState extends State<BookServicePage> {
     '03:00 PM',
     '04:00 PM',
   ];
+  double get basePrice => (widget.service.basePrice ?? 0).toDouble();
+
+  double get unitPrice => (widget.service.unitPrice ?? 0).toDouble();
+
+  double get additionalCharges {
+    if (quantity <= 1) return 0;
+    return (quantity - 1) * unitPrice;
+  }
+
+  double get totalPrice => basePrice + additionalCharges;
+
+  bool get canContinue => selectedDate != null && selectedTime != null;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(title: Text('Book Service')),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
@@ -281,29 +294,118 @@ class _BookServicePageState extends State<BookServicePage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15,),
-                 TextField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey.shade200,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ), 
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
+                  SizedBox(height: 15),
+                  TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey.shade200,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      hintText: "Enter your address",
                     ),
-                    hintText: "Enter your address"
                   ),
-                 )
                 ],
               ),
             ),
-            SizedBox(height: 24)
-            // 
-            
+            // container for price summary
+            SizedBox(height: 24),
+            Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: FlexColor.tealM3LightTertiaryContainer,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                children: [
+                  priceRow(
+                    context,
+                    'Base Price',
+                    nairaFormatter.format(basePrice),
+                  ),
+
+                  if (additionalCharges > 0) ...[
+                    SizedBox(height: 12),
+                    priceRow(
+                      context,
+                      'Additional ${widget.service.unitLabel}',
+                      nairaFormatter.format(additionalCharges),
+                    ),
+                  ],
+
+                  SizedBox(height: 12),
+                  Divider(),
+                  SizedBox(height: 12),
+
+                  priceRow(
+                    context,
+                    'Total',
+                    nairaFormatter.format(totalPrice),
+                    isTotal: true,
+                  ),
+                ],
+              ),
+            ),
+            // button to continue
+            SizedBox(height: 24),
+
+            SizedBox(
+              width: double.infinity,
+              height: 54,
+              child: ElevatedButton(
+                onPressed: canContinue
+                    ? () {
+                        // TODO: Navigate to payment page
+                      }
+                    : null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: FlexColor.mandyRedDarkTertiary,
+                  disabledBackgroundColor: Colors.grey.shade300,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                child: Text(
+                  'Continue to Payment',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget priceRow(
+    BuildContext context,
+    String label,
+    String value, {
+    bool isTotal = false,
+  }) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            fontWeight: isTotal ? FontWeight.bold : FontWeight.w500,
+          ),
+        ),
+        Text(
+          value,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            fontWeight: isTotal ? FontWeight.bold : FontWeight.w600,
+            color: isTotal ? FlexColor.mandyRedDarkTertiary : Colors.black,
+          ),
+        ),
+      ],
     );
   }
 }
