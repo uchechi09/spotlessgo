@@ -18,7 +18,9 @@ class ProfileSettingsContainer extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            onTap: () {},
+            onTap: () {
+                Navigator.of(context).pushNamed("/notifications");
+            },
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
             ),

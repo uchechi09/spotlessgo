@@ -64,10 +64,14 @@ class WelcomePage extends StatelessWidget {
           },
           child: Container(
             height: 180,
+            width: double.infinity,
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: Colors.grey.shade50,
               borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: Colors.grey.shade400,
+              )
             ),
             child: Row(
               spacing: 12,
