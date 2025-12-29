@@ -41,7 +41,9 @@ class WelcomePage extends StatelessWidget {
                 icon: Icons.cleaning_services_outlined,
                 title: "Cleaner?",
                 subtitle: "Accept jobs and earn money on your schedule",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, "/cleaner");
+                },
               ),
             ],
           ),

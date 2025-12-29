@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -5,7 +7,7 @@ import 'package:spotlessgo/models/serviceconfig.dart';
 import 'package:spotlessgo/utlis/currency_formatter.dart';
 
 class BookServicePage extends StatefulWidget {
-  BookServicePage({super.key, required this.service});
+ const BookServicePage({super.key, required this.service});
   final ServiceConfig service;
 
   @override

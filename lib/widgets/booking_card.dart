@@ -5,7 +5,7 @@ import 'package:spotlessgo/widgets/info_row.dart';
 enum BookingStatus { confirmed, booked, pending }
 
 class BookingCard extends StatelessWidget {
-  BookingCard({
+ const BookingCard({
     super.key,
     required this.title,
     required this.price,
@@ -90,7 +90,7 @@ class BookingCard extends StatelessWidget {
         );
       case BookingStatus.booked:
         return StatusData(
-          label: 'Booked',
+          label: 'Completed',
           background: Colors.green.shade50,
           textColor: Colors.green,
         );
