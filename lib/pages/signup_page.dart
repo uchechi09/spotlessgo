@@ -29,7 +29,7 @@ class SignupPage extends StatelessWidget {
               SizedBox(height: 20),
               //  Role-based title
               Text(
-                "Let’s Get Started",
+                "Let's Get Started",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,

@@ -6,6 +6,7 @@ import 'package:spotlessgo/pages/signup_page.dart';
 import 'package:spotlessgo/pages/notifications_page.dart';
 import 'package:spotlessgo/pages/onboarding_page.dart';
 import 'package:spotlessgo/pages/welcome_page.dart';
+import 'package:spotlessgo/pages/cleaner_service_selection_page.dart';
 import 'package:spotlessgo/widgets/bottom_navigation.dart';
 
 void main() {
@@ -34,9 +35,10 @@ class MyApp extends StatelessWidget {
         "/cleanersignup": (context) => SignupPage(role: UserRole.cleaner),
         "/home": (context) => BottomNavigation(),
         "/notifications": (context) => NotificationsPage(),
-       // "/cleanerhome": (context) => BottomNavigation(),
+        "/cleanerhome": (context) =>
+            const BottomNavigation(role: UserRole.cleaner),
         "/cleanerverification": (context) => CleanerVerificationPage(),
-        "/cleanerserviceselection": (context) => CleanerVerificationPage(),
+        "/cleanerserviceselection": (context) => CleanerServiceSelectionPage(),
       },
       initialRoute: "/onboarding",
     );
