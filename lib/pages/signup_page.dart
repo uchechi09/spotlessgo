@@ -58,7 +58,7 @@ class SignupPage extends StatelessWidget {
                     SizedBox(height: 20),
                     PasswordTextField(label: "Confirm Password"),
                     SizedBox(height: 24),
-                    PrimaryCutomButton(
+                    PrimaryCustomButton(
                       text: "Sign Up",
                       onPressed: () {
                         Navigator.of(context).pushReplacementNamed(
@@ -71,7 +71,7 @@ class SignupPage extends StatelessWidget {
                     SizedBox(height: 16),
                     Text("Already have an account?"),
                     SizedBox(height: 12),
-                    PrimaryCutomButton(
+                    PrimaryCustomButton(
                       text: "Sign In",
                       onPressed: () {
                         Navigator.of(context).pushReplacementNamed(

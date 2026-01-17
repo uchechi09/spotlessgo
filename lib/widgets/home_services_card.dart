@@ -27,7 +27,7 @@ class HomeServicesCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Padding(
-            padding:  EdgeInsets.all(8),
+            padding: EdgeInsets.all(8),
             child: Container(
               height: 130,
               width: double.infinity,
@@ -44,6 +44,14 @@ class HomeServicesCard extends StatelessWidget {
                       height: 120,
                       width: 120,
                       fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          height: 120,
+                          width: 120,
+                          color: Colors.grey.shade300,
+                          child: Icon(Icons.broken_image, color: Colors.grey),
+                        );
+                      },
                     ),
                   ),
                   SizedBox(width: 12),
@@ -54,11 +62,18 @@ class HomeServicesCard extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         Text(
                           subtitle,
                           style: TextStyle(fontSize: 14, color: Colors.black54),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         Text(
                           price,

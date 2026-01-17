@@ -1,4 +1,4 @@
-enum ServiceType { home, office, laundry }
+enum ServiceType { home, office, laundry, deepCleaning, postConstruction }
 
 class ServiceConfig {
   final ServiceType type;

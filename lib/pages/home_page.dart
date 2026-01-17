@@ -30,31 +30,27 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => BookServicePage(
-                        service: Services.home, 
-                      ),
+                      builder: (_) => BookServicePage(service: Services.home),
                     ),
                   );
                 },
                 icon: Icons.home_outlined,
-                imagePath: 'assets/images/homec.jpeg',
+                imagePath: Services.home.imageAsset,
                 title: "Home Cleaning",
                 subtitle: "Professional cleaning\nfor your home",
                 price: "From ₦15000",
               ),
               HomeServicesCard(
                 onTap: () {
-                    Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => BookServicePage(
-                        service: Services.office, 
-                      ),
+                      builder: (_) => BookServicePage(service: Services.office),
                     ),
                   );
                 },
                 icon: Icons.house_outlined,
-                imagePath: 'assets/images/office.jpeg',
+                imagePath: Services.office.imageAsset,
                 title: "Office Cleaning",
                 subtitle: "Expert cleaning services\nfor your workspace",
                 price: "From ₦10000",
@@ -64,17 +60,48 @@ class HomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => BookServicePage(
-                        service: Services.laundry, 
-                      ),
+                      builder: (_) =>
+                          BookServicePage(service: Services.laundry),
                     ),
                   );
                 },
                 icon: Icons.checkroom_outlined,
-                imagePath: 'assets/images/laundry.jpeg',
+                imagePath: Services.laundry.imageAsset,
                 title: "Laundry Services",
                 subtitle: "We wash, dry and fold\nyour clothes",
                 price: "From ₦300",
+              ),
+              HomeServicesCard(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          BookServicePage(service: Services.deepCleaning),
+                    ),
+                  );
+                },
+                icon: Icons.cleaning_services_outlined,
+                imagePath: Services.deepCleaning.imageAsset,
+                title: "Deep Cleaning",
+                subtitle: "Thorough top-to-bottom\ncleaning",
+                price: "From ₦25000",
+              ),
+              HomeServicesCard(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          BookServicePage(service: Services.postConstruction),
+                    ),
+                  );
+                },
+                icon: Icons.construction_outlined,
+                imagePath: Services.postConstruction.imageAsset,
+                title: "Post Construction",
+                subtitle: "Cleaning after renovation\nor build",
+                price: "From ₦50000",
               ),
               Padding(
                 padding: const EdgeInsets.all(15),

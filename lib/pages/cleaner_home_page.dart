@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:spotlessgo/widgets/info_row.dart';
 
 class CleanerHomePage extends StatefulWidget {
   const CleanerHomePage({super.key});
@@ -164,7 +167,7 @@ class _CleanerHomePageState extends State<CleanerHomePage> {
                   price: "₦7500",
                   status: "Pending Verification",
                 ),
-                 const SizedBox(height: 12),
+                const SizedBox(height: 12),
                 _buildJobCard(
                   title: "Laundry Services",
                   address: "321 Corporate Ave, Floor 5",
@@ -208,73 +211,6 @@ class _CleanerHomePageState extends State<CleanerHomePage> {
           style: const TextStyle(color: Colors.white70, fontSize: 12),
         ),
       ],
-    );
-  }
-
-  Widget _buildActionButton({
-    required IconData icon,
-    required String label,
-    VoidCallback? onTap,
-    bool showBadge = false,
-  }) {
-    return Container(
-      height: 80,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: BorderRadius.circular(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                children: [
-                  Icon(icon, color: const Color(0xFF2196F3), size: 28),
-                  if (showBadge)
-                    Positioned(
-                      right: 0,
-                      top: 0,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 4,
-                          vertical: 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: const Text(
-                          '3 New',
-                          style: TextStyle(color: Colors.white, fontSize: 8),
-                        ),
-                      ),
-                    ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Text(
-                label,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14,
-                  color: Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 
@@ -328,20 +264,7 @@ class _CleanerHomePageState extends State<CleanerHomePage> {
             style: const TextStyle(color: Colors.black54, fontSize: 13),
           ),
           const SizedBox(height: 12),
-          Row(
-            children: [
-              const Icon(
-                Icons.calendar_today_outlined,
-                size: 14,
-                color: Colors.black45,
-              ),
-              const SizedBox(width: 6),
-              Text(
-                date,
-                style: const TextStyle(color: Colors.black54, fontSize: 13),
-              ),
-            ],
-          ),
+          InfoRow(icon: Icons.calendar_today_outlined, text: date),
           const SizedBox(height: 16),
           Container(
             width: double.infinity,

@@ -63,10 +63,11 @@ class OnboardingPage extends StatelessWidget {
               color: Colors.blueAccent,
             ),
             SizedBox(height: 16),
-            PrimaryCutomButton(text: "Get Started",
-             onPressed: () {
-          Navigator.of(context).pushNamed("/welcome");
-        },
+            PrimaryCustomButton(
+              text: "Get Started",
+              onPressed: () {
+                Navigator.of(context).pushNamed("/welcome");
+              },
             ),
           ],
         ),
@@ -107,4 +108,3 @@ class OnboardingPage extends StatelessWidget {
     );
   }
 }
-

@@ -1,8 +1,8 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
-class PrimaryCutomButton extends StatelessWidget {
-  const PrimaryCutomButton({
+class PrimaryCustomButton extends StatelessWidget {
+  const PrimaryCustomButton({
     super.key,
     required this.text,
     required this.onPressed,

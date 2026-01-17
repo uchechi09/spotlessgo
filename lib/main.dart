@@ -9,8 +9,23 @@ import 'package:spotlessgo/pages/welcome_page.dart';
 import 'package:spotlessgo/pages/cleaner_service_selection_page.dart';
 import 'package:spotlessgo/widgets/bottom_navigation.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
+import 'package:spotlessgo/data/auth_provider.dart' as app_auth;
+import 'package:spotlessgo/data/job_provider.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => app_auth.AuthProvider()),
+        ChangeNotifierProvider(create: (_) => JobProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

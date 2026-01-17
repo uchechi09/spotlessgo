@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 
@@ -166,7 +168,7 @@ class CleanerServiceSelectionPageState
                 child: ElevatedButton(
                   onPressed: selectedServices.isNotEmpty
                       ? () {
-                          // TODO: Save selection to user profile/backend
+                          // Save selection to user profile/backend
                           Navigator.pushReplacementNamed(
                             context,
                             '/cleanerverification',

@@ -58,11 +58,13 @@ class LoginPage extends StatelessWidget {
                     SizedBox(height: 20),
                     PasswordTextField(label: "Password"),
                     SizedBox(height: 24),
-                    PrimaryCutomButton(
+                    PrimaryCustomButton(
                       text: "Sign In",
                       onPressed: () {
                         Navigator.of(context).pushNamed(
-                          isCustomer ? "/customerhome" : "/cleanerserviceselection",
+                          isCustomer
+                              ? "/customerhome"
+                              : "/cleanerserviceselection",
                         );
                       },
                     ),
@@ -85,7 +87,7 @@ class LoginPage extends StatelessWidget {
                       isCustomer ? "Don't have an account yet?" : "New here?",
                     ),
                     SizedBox(height: 16),
-                    PrimaryCutomButton(
+                    PrimaryCustomButton(
                       text: "Sign Up",
                       onPressed: () {
                         Navigator.of(context).pushNamed(
