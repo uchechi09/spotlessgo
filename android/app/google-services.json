@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "788871006278",
+    "project_id": "spotlessgo-96e48",
+    "storage_bucket": "spotlessgo-96e48.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788871006278:android:3f50218b6cc9130d18a247",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788871006278-l2fq5hhfd5coqg8bk9i99k82484kmb5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3YqPaM2sMh38UqnT3YcY9647BL2g1Mrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788871006278-l2fq5hhfd5coqg8bk9i99k82484kmb5i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "788871006278-rhudo203ugf6vpjpmkpjrf0vl100imqe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.spotlessgo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788871006278:android:7adbb741581c944e18a247",
+        "android_client_info": {
+          "package_name": "com.example.spotlessgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788871006278-l2fq5hhfd5coqg8bk9i99k82484kmb5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3YqPaM2sMh38UqnT3YcY9647BL2g1Mrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788871006278-l2fq5hhfd5coqg8bk9i99k82484kmb5i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "788871006278-rhudo203ugf6vpjpmkpjrf0vl100imqe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.spotlessgo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
